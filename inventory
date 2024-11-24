@@ -1,0 +1,99 @@
+######### adl_dte_tool_svr ##########
+adl_dte_tool_svr1 ansible_host=10.200.140.150 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_tool_svr2 ansible_host=10.200.140.151 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_tool_svr3 ansible_host=10.200.140.152 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_tool_svr4 ansible_host=10.200.140.153 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_tool_svr5 ansible_host=10.200.140.154 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_tool_svr6 ansible_host=10.200.140.155 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+
+######### adl_dte_cplane_service_svr ##########
+adl_dte_cplane_service_svr1 ansible_host=10.200.140.5 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_service_svr2 ansible_host=10.200.140.21 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_service_svr3 ansible_host=10.200.140.38 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+
+######### adl_dte_dplane_mysql_svr ##########
+adl_dte_dplane_mysql_stg1 ansible_host=10.200.141.5 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_mysql_stg2 ansible_host=10.200.141.21 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_mysql_prod1 ansible_host=10.200.142.5 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_mysql_prod2 ansible_host=10.200.142.21 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+
+######### adl_dte_cplane_kubenetes_service_svr ##########
+adl_dte_cplane_master1 ansible_host=10.200.140.52 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_master2 ansible_host=10.200.140.71 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_master3 ansible_host=10.200.140.86 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_etcd1 ansible_host=10.200.140.102 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_etcd2 ansible_host=10.200.140.124 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_cplane_etcd3 ansible_host=10.200.140.134 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+
+######### adl_dte_dplane_service_svr ##########
+adl_dte_dplane_service_svr1 ansible_host=10.200.160.5 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr2 ansible_host=10.200.160.20 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr3 ansible_host=10.200.160.38 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr4 ansible_host=10.200.160.8 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr5 ansible_host=10.200.160.4 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr6 ansible_host=10.200.160.9 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr7 ansible_host=10.200.160.10 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_dte_dplane_service_svr8 ansible_host=10.200.160.12 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+
+######### adl_digitalstack_stg_svr ##########
+adl_digitalstack_stg_svr1 ansible_host=10.200.111.5 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_digitalstack_stg_svr2 ansible_host=10.200.111.72 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+adl_digitalstack_stg_svr3 ansible_host=10.200.111.135 ansible_ssh_private_key_file=./ssh_keys/master_pvt_key
+
+[docker]
+adl_dte_tool_svr1
+adl_dte_tool_svr2
+adl_dte_tool_svr3
+adl_dte_cplane_service_svr1
+adl_dte_cplane_service_svr2
+adl_dte_cplane_service_svr3
+[nfs_server]
+adl_dte_tool_svr1
+adl_dte_tool_svr2
+adl_dte_tool_svr3
+[sonarqube]
+adl_dte_tool_svr2
+[harbor]
+adl_dte_tool_svr1
+[vault]
+adl_dte_tool_svr1
+[nexus]
+adl_dte_tool_svr2
+[jenkins]
+adl_dte_tool_svr1
+[gitlab]
+adl_dte_tool_svr3
+[db_servers]
+adl_dte_dplane_mysql_stg1  mysql_replication_role='master' mysql_server_id='1'
+adl_dte_dplane_mysql_stg2 mysql_replication_role='slave' mysql_server_id='2'
+[egw]
+adl_digitalstack_stg_svr1
+[wso2]
+adl_digitalstack_stg_svr1
+adl_digitalstack_stg_svr2
+[etcd_master]
+adl_dte_cplane_etcd1
+[etcd_secondary]
+adl_dte_cplane_etcd2
+adl_dte_cplane_etcd3
+[master]
+adl_dte_cplane_master1
+[master_secondary]
+adl_dte_cplane_master2
+adl_dte_cplane_master3
+[slaves]
+adl_dte_dplane_service_svr1
+adl_dte_dplane_service_svr2
+adl_dte_dplane_service_svr3
+adl_dte_dplane_service_svr4
+adl_dte_dplane_service_svr5
+adl_dte_dplane_service_svr6
+adl_dte_dplane_service_svr7
+adl_dte_dplane_service_svr8
+adl_digitalstack_stg_svr1
+adl_digitalstack_stg_svr2
+[cplane]
+adl_dte_cplane_service_svr1
+adl_dte_cplane_service_svr2
+adl_dte_cplane_service_svr3
+

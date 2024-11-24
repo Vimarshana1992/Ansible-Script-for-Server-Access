@@ -1,0 +1,24 @@
+---
+- name: Configure user
+  hosts: all
+  tasks:
+    - name: Create group wheel
+      group:
+        name: wheel
+        state: present
+    - name: Add wheel group to sudoers
+      copy:
+        content: '%wheel ALL=(ALL:ALL) NOPASSWD:ALL'
+        dest: /etc/sudoers.d/wheel_nopasswd
+        mode: 0440
+    - name: Create user account dulakshag
+      user:
+        name: dulakshag
+        shell: /bin/bash
+        groups: wheel
+        append: yes
+    - name: Upload SSH key for dulakshag
+      authorized_key:
+        user: dulakshag
+        state: present
+        key: "{{ lookup('file', './user_ssh_keys/dulakshag.pub') }}"
