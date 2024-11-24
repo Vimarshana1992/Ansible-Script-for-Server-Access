@@ -13,7 +13,7 @@
         mode: 0440
     - name: Create user account username
       user:
-        name: dulakshag
+        name: username
         shell: /bin/bash
         groups: wheel
         append: yes
