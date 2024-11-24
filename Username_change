@@ -1,4 +1,4 @@
-sed -i  's/vimarshana/dakshithad/g' add_use
+sed -i  's/vimarshana/username/g' add_use
 
 ansible-playbook -i  add_user.yml
 
